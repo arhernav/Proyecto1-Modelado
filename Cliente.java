@@ -27,6 +27,15 @@ public class Cliente{
     this.pais = p;
     this.id = id;
   }
+
+    /**
+     * Devuelve el pais del que proviene el cliente
+     * @return String Pais del que proviene el cliente
+     */
+
+    public String getPais(){
+	return this.pais;
+    }
   
   /**
    * Método que permite al usuario acceder a su cuenta.
@@ -36,7 +45,7 @@ public class Cliente{
     System.out.println("Escribe tu usuario: ");
     String usuario = s.nextLine();
     System.out.println("Escribe tu contraseña: ");
-    Scanner contraseña = s.System.in();
+    Scanner contraseña = System.in();
   }
   
 }
