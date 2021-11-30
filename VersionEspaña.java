@@ -10,7 +10,7 @@ public class VersionMexico implements VersionTienda{
    */  
   @Override
   public void saludar(){
-    System.out.println("BIENVENID@ A CHEEMSMART!!!");
+    System.out.println("HOLA Tí@, BIENVENID@!!!");
   }
   
   /**
@@ -18,7 +18,7 @@ public class VersionMexico implements VersionTienda{
    */
   @Override
   public void despedirse(){
-    System.out.println("*Gracias por tu compra* \n\n¡VUELVA PRONTO!");
+    System.out.println("*Le agradecemos su compra* \n\n¡ESPERAMOS VERLE PRONTO!");
   }
   
   /**
