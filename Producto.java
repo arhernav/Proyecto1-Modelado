@@ -8,18 +8,17 @@ public class Producto{
   long codigoDeBarras;
   String departamento;
   int precio;
-  boolean descuento;
+  boolean descuento = false;
   
   /**
    * Método constrcutor.
    * Crea un producto con cierta información.
    */
-  public Producto(String n, long cB, String d, int p, boolean dc){
+  public Producto(String n, long cB, String d, int p){
     this.nombre = nombre;
     this.codigoDeBarras = cB;
     this.departamento = d;
     this.precio = p;
-    this.descuento = dc;
   }
   
   /**

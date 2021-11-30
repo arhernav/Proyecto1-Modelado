@@ -11,9 +11,9 @@ public class CatalogoElectrodomesticos extends Catalogo{
    */
   public CatalogoElectrodomesticos(){
     this.productos = new LinkedList<Producto>();
-    Producto uno = new Producto("Licuadora", 8910111213145, "Electrodomésticos", 800, true);
-    Producto dos = new Producto("Microondas", 7892122232427, "Electrodomésticos", 1300, true);
-    Producto tres = new Producto("Tostadora", 5678901213272, "Electrodomésticos", 270, false);
+    Producto uno = new Producto("Licuadora", 891011121, "Electrodomésticos", 800);
+    Producto dos = new Producto("Microondas", 789212223, "Electrodomésticos", 1300);
+    Producto tres = new Producto("Tostadora", 567890121, "Electrodomésticos", 270);
   }
   
   /**

@@ -11,9 +11,9 @@ public class CatalogoAlimentos extends Catalogo{
    */
   public CatalogoAlimentos(){
     this.productos = new LinkedList<Producto>();
-    Producto uno = new Producto("Cajeta envinada", 1378101142143, "Abarrotes", 25, true);
-    Producto dos = new Producto("Yogur", 1234567891012, "Lácteos", 12, false);
-    Producto tres = new Producto("Cereales", 3456789102134, "Abarrotes", 34, true);
+    Producto uno = new Producto("Cajeta envinada", 137810114, "Abarrotes", 25);
+    Producto dos = new Producto("Yogur", 123456789, "Lácteos", 12);
+    Producto tres = new Producto("Cereales", 345678910, "Abarrotes", 34);
   }
   
   /**

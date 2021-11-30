@@ -21,8 +21,8 @@ public abstract class Catalogo implements Iterable{
      * @param Producto Producto a eliminar del catalogo
      * @return Producto eliminado del catalogo
      */
-    public Producto eliminarProducto(Producto producto){
-	this.productos.remove(producto);
+    public boolean eliminarProducto(Producto producto){
+	return this.productos.remove(producto);
     }
 
     /**
@@ -30,11 +30,8 @@ public abstract class Catalogo implements Iterable{
      * @param long Codigo de barras del  producto
      * @return Producto Producto solicitado
      */
-    public Producto getProducto(long codigoDeBarras){
-	for(Producto p : this.productos){
-	    if(p.getCodigoBarras().equals(codigoDeBarras))return p;
-	}
-	return null;
+    public Producto getProducto(int index){
+        return this.productos.get(index);
     }
     
     
