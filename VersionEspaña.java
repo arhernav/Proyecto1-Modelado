@@ -1,9 +1,9 @@
 import java.time.LocalDate;
 
 /**
- * Clase que modela la versión mexicana de la tienda CheemsMart.
+ * Clase que modela la versión española de la tienda CheemsMart.
  */
-public class VersionMexico implements VersionTienda{
+public class VersionEspaña implements VersionTienda{
   
   /**
    * Método que le da la bienvenida al cliente mexicano al ingresar a la tienda.
