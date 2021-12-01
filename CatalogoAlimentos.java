@@ -14,6 +14,9 @@ public class CatalogoAlimentos extends Catalogo{
     Producto uno = new Producto("Cajeta envinada", 137810114, "Abarrotes", 25);
     Producto dos = new Producto("Yogur", 123456789, "Lácteos", 12);
     Producto tres = new Producto("Cereales", 345678910, "Abarrotes", 34);
+    this.productos.add(uno);
+    this.productos.add(dos);
+    this.productos.add(tres);
   }
   
   /**
