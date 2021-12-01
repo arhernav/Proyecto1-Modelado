@@ -31,6 +31,14 @@ public class VersionEspaña implements VersionTienda{
   }
   
   /**
+   * Método que muestra la fecha de entrega de lo que el cliente compró.
+   */
+  @Override
+  public void fechaDeEntrega(){
+    System.out.println("La fecha de entrega es el día: " + this.generarFechaEntrega();
+  }
+  
+  /**
    * Método que envía la oferta al cliente.
    */ 
   @Override

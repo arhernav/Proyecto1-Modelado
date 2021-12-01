@@ -11,7 +11,7 @@ public class Producto{
   boolean descuento = false;
   
   /**
-   * Método constrcutor.
+   * Método constructor.
    * Crea un producto con cierta información.
    */
   public Producto(String n, long cB, String d, int p){
@@ -28,4 +28,23 @@ public class Producto{
     return this.codigoDeBarras;
   }
   
+  /**
+   * Método que devuelve el precio del producto.
+   * @return this.precio - Precio del producto.
+   */
+  public int getPrecio(){
+    return this.precio;
+  }
+  
+  /**
+   * Método que revisa si el producto tiene descuento y de ser así, lo aplica al precio.
+   */
+  public void descuento(){
+    if(this.descuento == true){
+      int precioFinal = this.precio - ((this.precio * 30) / 100);
+      System.out.println("Precio: $" + this.precio + "\tDescuento: 30% \t\tPrecio Final: $" + precioFinal); 
+    } else {
+      System.out.println("Precio: $" + this.precio);
+    }
+  }
 }

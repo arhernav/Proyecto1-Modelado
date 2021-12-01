@@ -14,6 +14,9 @@ public class CatalogoElectrodomesticos extends Catalogo{
     Producto uno = new Producto("Licuadora", 891011121, "Electrodomésticos", 800);
     Producto dos = new Producto("Microondas", 789212223, "Electrodomésticos", 1300);
     Producto tres = new Producto("Tostadora", 567890121, "Electrodomésticos", 270);
+    this.productos.add(uno);
+    this.productos.add(dos);
+    this.productos.add(tres);
   }
   
   /**
