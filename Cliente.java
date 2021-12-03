@@ -11,13 +11,13 @@ public class Cliente{
   long telefono;
   String direccion;
   CuentaBanco cuenta;
-  String pais;
+  Pais pais;
   int id;
   
   /**
    * Método que crea un cliente.
    */
-  public Cliente(String u, String co, String n, long t, String d, CuentaBanco cu, String p, int id){
+  public Cliente(String u, String co, String n, long t, String d, CuentaBanco cu, Pais p, int id){
     this.usuario = u;
     this.contraseña = co;
     this.nombre = n;
@@ -32,8 +32,16 @@ public class Cliente{
      * Devuelve el pais del que proviene el cliente
      * @return String Pais del que proviene el cliente
      */
-    public String getPais(){
+    public Pais getPais(){
 	return this.pais;
+    }
+
+    /**
+     * Metodo para obtener el usuario del cliente
+     * @return String Usuario del cliente
+     */
+    public String getUsuario(){
+	return this.usuario;
     }
   
   

@@ -7,7 +7,7 @@ public class Producto{
   String nombre;
   long codigoDeBarras;
   String departamento;
-  int precio;
+  final int precio;
   boolean descuento = false;
   
   /**
@@ -15,7 +15,7 @@ public class Producto{
    * Crea un producto con cierta información.
    */
   public Producto(String n, long cB, String d, int p){
-    this.nombre = nombre;
+    this.nombre = n;
     this.codigoDeBarras = cB;
     this.departamento = d;
     this.precio = p;
@@ -29,22 +29,30 @@ public class Producto{
   }
   
   /**
-   * Método que devuelve el precio del producto.
-   * @return this.precio - Precio del producto.
+   * Método que devuelve el precio del producto tenga descuento o no
+   * El precio varia segun si el producto tiene descuento
+   * Si el producto tiene descuento, se le descuente el 30% al precio original
+   * @return int Precio del produco
    */
   public int getPrecio(){
-    return this.precio;
-  }
-  
-  /**
-   * Método que revisa si el producto tiene descuento y de ser así, lo aplica al precio.
-   */
-  public void descuento(){
     if(this.descuento == true){
-      int precioFinal = this.precio - ((this.precio * 30) / 100);
-      System.out.println("Precio: $" + this.precio + "\tDescuento: 30% \t\tPrecio Final: $" + precioFinal); 
+	return this.precio - (this.precio * (30/100) );
     } else {
-      System.out.println("Precio: $" + this.precio);
+	return this.precio;
     }
   }
+
+    /**
+     * Metodo toString
+     * Devuelve una representacion en cadena del objeto
+     * @return String Representacion en cadena del objeto
+     */
+    @Override public String toString(){
+	String descuento;
+	if(this.descuento == true){
+	    return "Justo ahora, este producto tiene descuento del 30%. Precio usual" + this.precio + "Precico con descuento: " + this.getPrecio() + "\n" + this.nombre + ": [ Departamento: " + this.departamento + ", Precio: " + this.getPrecio() + " ]\n\t CODIGO " + this.codigoDeBarras + "\n";
+	}else{
+	    return this.nombre + ": [ Departamento: " + this.departamento + ", Precio: " + this.getPrecio() + " ]\n\t CODIGO " + this.codigoDeBarras + "\n";
+	}
+    }
 }
