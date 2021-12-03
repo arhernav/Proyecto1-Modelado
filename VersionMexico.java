@@ -26,16 +26,15 @@ public class VersionMexico implements VersionTienda{
    */
   @Override
   public void generarFechaEntrega(){
-    LocalDate fecha = LocalDate.now();
-    System.out.println(fecha.plusDays(15));
+    System.out.println("La fecha de entrega es el día: " + this.fechaDeEntrega());
   }
   
   /**
    * Método que muestra la fecha de entrega de lo que el cliente compró.
    */
-  @Override
-  public void fechaDeEntrega(){
-    System.out.println("La fecha de entrega es el día: " + this.generarFechaEntrega();
+  public String fechaDeEntrega(){
+      LocalDate fecha = LocalDate.now();
+      return fecha.plusDays(15).toString();
   }
   
   /**

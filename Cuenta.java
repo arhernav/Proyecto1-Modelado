@@ -2,18 +2,14 @@
  * Cuenta de banco personal asignada a un cliente
  */
 public class Cuenta implements CuentaBanco{
-
-    //Persona a la que pertenece la cuenta
-    Cliente cliente;
-
+    
     //Cuenta proxy
     CuentaProxy proxy;
 
     //Cantidad de dinero de la cuenta
     int dinero;
 
-    public Cuenta(Cliente cliente, int dinero){
-	this.cliente = cliente;
+    public Cuenta(int dinero){
 	this.dinero = dinero;
     }
 

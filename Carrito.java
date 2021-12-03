@@ -6,7 +6,7 @@ import java.util.LinkedList;
 public class Carrito{
 
     //Lista de objetos agregados al carrito
-    LinkedList<Producto> carrito = new LinkedList<Carrito>();
+    LinkedList<Producto> carrito = new LinkedList<Producto>();
 
     /**
      * Metodo para agregar objetos al carrito
