@@ -19,7 +19,7 @@ public class IteratorFactory{
      * @param String Catologo al cual se le solicitara su iterador
      * @param Iterator Iterador del catalogo solicitado
      */
-    public Iterator elegirIterador(String catalogo){
+    public Iterator<Producto> elegirIterador(String catalogo){
 	switch(catalogo.toLowerCase()){
 	case "electronica":
 	    return this.catalogoElectronica.iterator();
