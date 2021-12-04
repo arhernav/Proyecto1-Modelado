@@ -57,7 +57,7 @@ public class Producto{
     }
     
     /**
-     * Método que asigna un booleano al descuento del producto.
+     * Método que asigna un valor booleano al descuento del producto.
      */
     public void setDescuento(boolean d){
       this.descuento = d;

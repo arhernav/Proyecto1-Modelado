@@ -30,7 +30,7 @@ public class VersionMexico implements VersionTienda{
   }
   
   /**
-   * Método que muestra la fecha de entrega de lo que el cliente compró.
+   * Método que muestra la fecha aproximada de entrega de lo que el cliente compró.
    */
   public String fechaDeEntrega(){
       LocalDate fecha = LocalDate.now();
@@ -42,7 +42,10 @@ public class VersionMexico implements VersionTienda{
    */ 
   @Override
   public void enviarOferta(){
-    System.out.println("FALTA IMPLEMENTAR............");
+    ListIterator<Producto> iterador = this.productos.listIterator();
+    if(this.productos.get(iterador) == this.productos.setDescuento(true){
+      Sytem.out.pritln("Los productos con descuento son: " + this.productos.get(iterador));
+    } 
   }
   
 }
