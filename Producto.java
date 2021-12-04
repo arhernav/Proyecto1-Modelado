@@ -36,9 +36,9 @@ public class Producto{
    */
   public int getPrecio(){
     if(this.descuento == true){
-	return this.precio - (this.precio * (30/100) );
+ return this.precio - (this.precio * (30/100) );
     } else {
-	return this.precio;
+ return this.precio;
     }
   }
 
@@ -48,11 +48,18 @@ public class Producto{
      * @return String Representacion en cadena del objeto
      */
     @Override public String toString(){
-	String descuento;
-	if(this.descuento == true){
-	    return "Justo ahora, este producto tiene descuento del 30%. Precio usual" + this.precio + "Precico con descuento: " + this.getPrecio() + "\n" + this.nombre + ": [ Departamento: " + this.departamento + ", Precio: " + this.getPrecio() + " ]\n\t CODIGO " + this.codigoDeBarras + "\n";
-	}else{
-	    return this.nombre + ": [ Departamento: " + this.departamento + ", Precio: " + this.getPrecio() + " ]\n\t CODIGO " + this.codigoDeBarras + "\n";
-	}
+ String descuento;
+ if(this.descuento == true){
+     return "Justo ahora, este producto tiene descuento del 30%. Precio usual" + this.precio + "Precico con descuento: " + this.getPrecio() + "\n" + this.nombre + ": [ Departamento: " + this.departamento + ", Precio: " + this.getPrecio() + " ]\n\t CODIGO " + this.codigoDeBarras + "\n";
+ }else{
+     return this.nombre + ": [ Departamento: " + this.departamento + ", Precio: " + this.getPrecio() + " ]\n\t CODIGO " + this.codigoDeBarras + "\n";
+ }
+    }
+    
+    /**
+     * Método que asigna un booleano al descuento del producto.
+     */
+    public void setDescuento(boolean d){
+      this.descuento = d;
     }
 }

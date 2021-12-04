@@ -1,6 +1,7 @@
 import java.lang.Iterable;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Random;
 /**
  * Interfaz para modelar el comportamiento de los diferentes tipos de catalogos
  */
@@ -13,7 +14,7 @@ public abstract class Catalogo implements Iterable{
      * @param Producto a añadir
      */
     public void añadirProducto(Producto producto){
-	this.productos.add(producto);
+ this.productos.add(producto);
     }
 
     /**
@@ -22,7 +23,7 @@ public abstract class Catalogo implements Iterable{
      * @return Producto eliminado del catalogo
      */
     public boolean eliminarProducto(Producto producto){
-	return this.productos.remove(producto);
+ return this.productos.remove(producto);
     }
 
     /**
@@ -34,5 +35,18 @@ public abstract class Catalogo implements Iterable{
         return this.productos.get(index);
     }
     
+    /**
+     * Método que genera una oferta aleatoriamente para dos productos del catálogo.
+     */
+    public void generarOferta(){
+      Random numero = new Random();
+      int oferta1 = numero.nextInt(this.productos.size());
+      int oferta2 = numero.nextInt(this.productos.size());
+      
+      this.productos.get(oferta1);
+      this.productos.get(oferta1).setDescuento(true);
+      this.productos.get(oferta2);
+      this.productos.get(oferta2).setDescuento(true);
+    }
     
 }
