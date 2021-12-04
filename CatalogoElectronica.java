@@ -22,7 +22,7 @@ public class CatalogoElectronica extends Catalogo{
     /**
      * Devuelve un iterador para recorrer el catalogo
      */
-    @Override public Iterator iterator(){
+    @Override public Iterator<Producto> iterator(){
 	return this.productos.iterator();
     }
 

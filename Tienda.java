@@ -16,6 +16,8 @@ public class Tienda{
 	this.baseClientes = new Hashtable<String, Cliente>();
 	Cliente doge = new Cliente("xXdogeXx", "D0gu35hopp1ng", "Doge", 1122334455, "Number 2013, 4chan street", new Cuenta(3000000), Pais.USA, 00001 );
 	this.baseClientes.put(doge.getUsuario(), doge);
+	Cliente grumpyCat = new Cliente("grumpy", "LifeIsMiserable", "Grumpy Cat", 223344556, "Lolcats Street, Around reddit apple", new Cuenta(500000), Pais.ESPAÑA, 00002);
+	this.baseClientes.put(grumpyCat.getUsuario(), grumpyCat);
     }
 
     public Tienda(Hashtable<String, Cliente> baseClientes){
@@ -98,6 +100,13 @@ public class Tienda{
 
     public Hashtable<String,Cliente> getTabla(){
 	return this.baseClientes;
+    }
+
+    public void aplicarOfertas(Iterator<Producto> iterador){
+	while(iterador.hasNext()){
+	    Producto p = iterador.next();
+	    p.descuento = true;
+	}
     }
     
     
