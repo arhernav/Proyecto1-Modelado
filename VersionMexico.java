@@ -1,9 +1,12 @@
 import java.time.LocalDate;
+import java.util.Iterator;
 
 /**
  * Clase que modela la versión mexicana de la tienda CheemsMart.
  */
 public class VersionMexico implements VersionTienda{
+
+    IteratorFactory fabrica = new IteratorFactory();
   
   /**
    * Método que le da la bienvenida al cliente mexicano al ingresar a la tienda.
@@ -36,16 +39,19 @@ public class VersionMexico implements VersionTienda{
       LocalDate fecha = LocalDate.now();
       return fecha.plusDays(15).toString();
   }
-  
-  /**
+
+    /**
    * Método que envía la oferta al cliente.
    */ 
-  @Override
-  public void enviarOferta(){
-    ListIterator<Producto> iterador = this.productos.listIterator();
-    if(this.productos.get(iterador) == this.productos.setDescuento(true){
-      Sytem.out.pritln("Los productos con descuento son: " + this.productos.get(iterador));
-    } 
-  }
+    @Override
+    public void enviarOferta(){
+	Iterator<Producto> it = fabrica.elegirIterador("alimentos");
+	System.out.println("Las ofertas del dia de hoy son: ");
+	while(it.hasNext()){
+	    Producto producto = it.next();
+	    if(producto.getDescuento() == true)System.out.println(producto);
+	}
+    }
+    
   
 }

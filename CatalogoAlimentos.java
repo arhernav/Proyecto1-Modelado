@@ -25,12 +25,5 @@ public class CatalogoAlimentos extends Catalogo{
   @Override public Iterator<Producto> iterator(){
     return this.productos.iterator();
   }
-  
-  /**
-   * Método que aplica la oferta a los productos del catálogo alimenticio.
-   */
-  public void aplicarOferta(){
-    this.productos.generarOferta();
-  }
-  
+    
 }
