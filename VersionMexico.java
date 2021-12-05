@@ -6,7 +6,15 @@ import java.util.Iterator;
  */
 public class VersionMexico implements VersionTienda{
 
-    IteratorFactory fabrica = new IteratorFactory();
+    //Fabrica de iteradores para los catalogos
+    IteratorFactory fabrica;
+
+    /**
+     * Constructor de la clase
+     */
+    public VersionMexico(IteratorFactory fabrica){
+	this.fabrica = fabrica;
+    }
   
   /**
    * Método que le da la bienvenida al cliente mexicano al ingresar a la tienda.
@@ -40,13 +48,14 @@ public class VersionMexico implements VersionTienda{
       return fecha.plusDays(15).toString();
   }
 
+
     /**
    * Método que envía la oferta al cliente.
    */ 
     @Override
     public void enviarOferta(){
 	Iterator<Producto> it = fabrica.elegirIterador("alimentos");
-	System.out.println("Las ofertas del dia de hoy son: ");
+	System.out.println("De todas las ofertas de hoy, estas fueron seleccionadas especialmente para ti: ");
 	while(it.hasNext()){
 	    Producto producto = it.next();
 	    if(producto.getDescuento() == true)System.out.println(producto);

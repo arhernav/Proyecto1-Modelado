@@ -17,6 +17,7 @@ public class CatalogoAlimentos extends Catalogo{
     this.productos.add(uno);
     this.productos.add(dos);
     this.productos.add(tres);
+    this.generarOfertas();
   }
   
   /**

@@ -17,6 +17,7 @@ public class CatalogoElectronica extends Catalogo{
  this.productos.add(losNintendos);
  this.productos.add(alienware);
  this.productos.add(estereo);
+ this.generarOfertas();
     }
 
     /**

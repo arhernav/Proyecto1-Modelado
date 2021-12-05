@@ -23,5 +23,6 @@ public interface VersionTienda{
      */
     public void enviarOferta();
 
+
     
 }
