@@ -26,11 +26,5 @@ public class CatalogoElectronica extends Catalogo{
  return this.productos.iterator();
     }
     
-  /**
-   * Método que aplica la oferta a los productos del catálogo de electrónica.
-   */
-  public void aplicarOferta(){
-    this.productos.generarOferta();
-  }
-    
+     
 }

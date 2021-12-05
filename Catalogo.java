@@ -38,15 +38,19 @@ public abstract class Catalogo implements Iterable{
     /**
      * Método que genera una oferta aleatoriamente para dos productos del catálogo.
      */
-    public void generarOferta(){
+    public void generarOfertas(){
       Random numero = new Random();
-      int oferta1 = numero.nextInt(this.productos.size());
-      int oferta2 = numero.nextInt(this.productos.size());
+      boolean iguales = true;
+      int oferta1 = 0;
+      int oferta2 = 0;
+      while(iguales){
+	  oferta1 = numero.nextInt(this.productos.size());
+	  oferta2 = numero.nextInt(this.productos.size());
+	  if(oferta1 != oferta2) iguales = false;
+      }
+      this.productos.get(oferta1).setDescuento();
+      this.productos.get(oferta2).setDescuento();
       
-      this.productos.get(oferta1);
-      this.productos.get(oferta1).setDescuento(true);
-      this.productos.get(oferta2);
-      this.productos.get(oferta2).setDescuento(true);
     }
     
 }

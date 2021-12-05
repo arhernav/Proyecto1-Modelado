@@ -26,10 +26,4 @@ public class CatalogoElectrodomesticos extends Catalogo{
     return this.productos.iterator();
   }
   
-  /**
-   * Método que aplica la oferta a los productos del catálogo de electrodomésticos.
-   */
-  public void aplicarOferta(){
-    this.productos.generarOferta();
-  }
 }

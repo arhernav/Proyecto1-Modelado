@@ -1,9 +1,12 @@
 import java.time.LocalDate;
+import java.util.Iterator;
 
 /**
  * Version de la tienda para clientes provenientes de USA
  */
 public class VersionUSA implements VersionTienda{
+
+    IteratorFactory fabrica = new IteratorFactory();
 
     /**
      * Muestra un saludo en ingles
@@ -24,17 +27,24 @@ public class VersionUSA implements VersionTienda{
      */
     @Override public void generarFechaEntrega(){
       LocalDate fecha = LocalDate.now();
-      return fecha.plusDays(15).toString();
+      System.out.println(fecha.plusDays(15));
     }
 
+
     /**
-     * Muestra las ofertas del dia en ingles
-     */
-    @Override public void enviarOferta(){
- System.out.println("The offers of the day are: ");
- System.out.println("///////////////////////////////////////////////" +
-      "////////////Falta implementar//////////////////" +
-      "///////////////////////////////////////////////");
+   * Método que envía la oferta al cliente.
+   */ 
+    @Override
+    public void enviarOferta(){
+	Iterator<Producto> it = fabrica.elegirIterador("electronica");
+	System.out.println("Today's offers are:");
+	while(it.hasNext()){
+	    Producto producto = it.next();
+	    if(producto.getDescuento() == true)System.out.println(producto);
+	}
+
+	System.out.println("So you better start giving us your money");
+	
     }
     
 

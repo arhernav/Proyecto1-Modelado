@@ -7,14 +7,14 @@ public class Producto{
   String nombre;
   long codigoDeBarras;
   String departamento;
-  final int precio;
+  double precio;
   boolean descuento = false;
   
   /**
    * Método constructor.
    * Crea un producto con cierta información.
    */
-  public Producto(String n, long cB, String d, int p){
+  public Producto(String n, long cB, String d, double p){
     this.nombre = n;
     this.codigoDeBarras = cB;
     this.departamento = d;
@@ -34,13 +34,17 @@ public class Producto{
    * Si el producto tiene descuento, se le descuente el 30% al precio original
    * @return int Precio del produco
    */
-  public int getPrecio(){
-    if(this.descuento == true){
- return this.precio - (this.precio * (30/100) );
-    } else {
- return this.precio;
+    public double getPrecio(){
+	double precioSupp = this.precio;
+	double rebaja = 0;
+	rebaja = (this.precio/100) * 30;
+    if(this.descuento){
+	precioSupp = precioSupp - rebaja;
     }
+    return precioSupp;
+    
   }
+
 
     /**
      * Metodo toString
@@ -50,16 +54,24 @@ public class Producto{
     @Override public String toString(){
  String descuento;
  if(this.descuento == true){
-     return "Justo ahora, este producto tiene descuento del 30%. Precio usual" + this.precio + "Precico con descuento: " + this.getPrecio() + "\n" + this.nombre + ": [ Departamento: " + this.departamento + ", Precio: " + this.getPrecio() + " ]\n\t CODIGO " + this.codigoDeBarras + "\n";
+     return "Justo ahora, este producto tiene descuento del 30%. Precio usual: " + this.precio + " Precico con descuento: " + this.getPrecio() + "\n" + this.nombre + ": [ Departamento: " + this.departamento + ", Precio: " + this.getPrecio() + " ]\n\t CODIGO " + this.codigoDeBarras + "\n";
  }else{
      return this.nombre + ": [ Departamento: " + this.departamento + ", Precio: " + this.getPrecio() + " ]\n\t CODIGO " + this.codigoDeBarras + "\n";
  }
+    }
+
+    /**
+     * Getter para el descuento del producto
+     * @return boolean Booleano que indica si el producto esta en oferta
+     */
+    public boolean getDescuento(){
+	return this.descuento;
     }
     
     /**
      * Método que asigna un valor booleano al descuento del producto.
      */
-    public void setDescuento(boolean d){
-      this.descuento = d;
+    public void setDescuento(){
+	this.descuento = true;
     }
 }
