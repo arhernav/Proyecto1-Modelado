@@ -10,7 +10,7 @@ public class Tienda{
     /*Fabrica de iteradores para poder mostrar los catalogos*/
     protected IteratorFactory fabrica = new IteratorFactory();
     /*Version de la tienda que se usara para las interacciones con el usuario*/
-    protected VersionTienda version = new VersionMexico();
+    protected VersionTienda version = new VersionMexico(fabrica);
 
     public Tienda(){
 	this.baseClientes = new Hashtable<String, Cliente>();
@@ -27,11 +27,11 @@ public class Tienda{
     protected VersionTienda elegirPais(Cliente cliente){
 	switch(cliente.getPais()){
 	case MEXICO:
-	    return new VersionMexico();
+	    return new VersionMexico(fabrica);
 	case ESPAÑA:
-	    return new VersionEspaña();
+	    return new VersionEspaña(fabrica);
 	case USA:
-	    return new VersionUSA();
+	    return new VersionUSA(fabrica);
 	default:
 	    return null;
 	}

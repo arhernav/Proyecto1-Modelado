@@ -17,6 +17,7 @@ public class CatalogoElectrodomesticos extends Catalogo{
     this.productos.add(uno);
     this.productos.add(dos);
     this.productos.add(tres);
+    this.generarOfertas();
   }
   
   /**
