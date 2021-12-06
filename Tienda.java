@@ -11,13 +11,22 @@ public class Tienda{
     protected IteratorFactory fabrica = new IteratorFactory();
     /*Version de la tienda que se usara para las interacciones con el usuario*/
     protected VersionTienda version = new VersionMexico(fabrica);
+    /*Cliente usando la tienda*/
+    protected Cliente clienteActivo;
+    /*Carrito para las compras del cliente*/
+    protected Carrito carrito;
 
     public Tienda(){
 	this.baseClientes = new Hashtable<String, Cliente>();
-	Cliente doge = new Cliente("xXdogeXx", "D0gu35hopp1ng", "Doge", 1122334455, "Number 2013, 4chan street", new Cuenta(3000000), Pais.USA, 00001 );
+	
+	Cliente doge = new Cliente("xXdogeXx", "D0gu35", "Doge", 1122334455, "Number 2013, 4chan street", new Cuenta(3000000), Pais.USA, 00001 );
 	this.baseClientes.put(doge.getUsuario(), doge);
+	
 	Cliente grumpyCat = new Cliente("grumpy", "LifeIsMiserable", "Grumpy Cat", 223344556, "Lolcats Street, Around reddit apple", new Cuenta(500000), Pais.ESPAÑA, 00002);
 	this.baseClientes.put(grumpyCat.getUsuario(), grumpyCat);
+
+	Cliente staboCrabo = new Cliente("Ronin Crab", "MessWithTheCrabo", "Stabo Crabo", 334455667, "Veracruz, Mexico", new Cuenta(30000), Pais.MEXICO, 00003);
+	this.baseClientes.put(staboCrabo.getUsuario(), staboCrabo);
     }
 
     public Tienda(Hashtable<String, Cliente> baseClientes){
@@ -93,20 +102,25 @@ public class Tienda{
 	this.version.enviarOferta();
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Metodos exclusivamente para pruebas. Borrar una vez terminado el proyecto/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public void setVersion(Cliente cliente){
+    /**
+     * Metodo para obtener un cliente de la tienda
+     * @param String Usuario del cliente
+     * @return Cliente Cliente correspondiente al usuario
+     */
+    public Cliente getCliente(String usuario){
+	Cliente cliente = null;
+	cliente = this.baseClientes.get(usuario);
+	return cliente;
+    }
+
+    /**
+     * Metodo para iniciar sesion en la tienda
+     * @param Cliente ajusta la tienda al  cliente dado
+     */
+    public void inicializarTienda(Cliente cliente){
 	this.version = this.elegirPais(cliente);
-    }
-
-    public Hashtable<String,Cliente> getTabla(){
-	return this.baseClientes;
-    }
-
-    public void aplicarOfertas(Iterator<Producto> iterador){
-	while(iterador.hasNext()){
-	    Producto p = iterador.next();
-	    p.descuento = true;
-	}
+	this.clienteActivo = cliente;
+	this.carrito = new Carrito();	
     }
     
     
