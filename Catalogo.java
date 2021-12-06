@@ -7,6 +7,7 @@ import java.util.Random;
  */
 public abstract class Catalogo implements Iterable{
 
+  /** Lista de productos para los catálogos */
     LinkedList<Producto> productos;
     
     /**
@@ -44,9 +45,9 @@ public abstract class Catalogo implements Iterable{
       int oferta1 = 0;
       int oferta2 = 0;
       while(iguales){
-	  oferta1 = numero.nextInt(this.productos.size());
-	  oferta2 = numero.nextInt(this.productos.size());
-	  if(oferta1 != oferta2) iguales = false;
+   oferta1 = numero.nextInt(this.productos.size());
+   oferta2 = numero.nextInt(this.productos.size());
+   if(oferta1 != oferta2) iguales = false;
       }
       this.productos.get(oferta1).setDescuento();
       this.productos.get(oferta2).setDescuento();

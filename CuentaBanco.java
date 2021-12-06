@@ -4,11 +4,6 @@
 public interface CuentaBanco{
 
     /**
-     * Metodo para realizar una trasaccion 
-     */
-    public void realizarTransaccion(int costo);
-
-    /**
      * Metodo para obtener la cantidad de dinero de la cuenta
      */
     public int revisarDinero();

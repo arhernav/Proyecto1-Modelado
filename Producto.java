@@ -1,5 +1,5 @@
 /**
- * Clase... 
+ * Clase que modela las características de cada Producto para los catálogos.
  */
 public class Producto{
   
@@ -35,11 +35,11 @@ public class Producto{
    * @return int Precio del produco
    */
     public double getPrecio(){
-	double precioSupp = this.precio;
-	double rebaja = 0;
-	rebaja = (this.precio/100) * 30;
+ double precioSupp = this.precio;
+ double rebaja = 0;
+ rebaja = (this.precio/100) * 30;
     if(this.descuento){
-	precioSupp = precioSupp - rebaja;
+ precioSupp = precioSupp - rebaja;
     }
     return precioSupp;
     
@@ -65,13 +65,13 @@ public class Producto{
      * @return boolean Booleano que indica si el producto esta en oferta
      */
     public boolean getDescuento(){
-	return this.descuento;
+ return this.descuento;
     }
     
     /**
      * Método que asigna un valor booleano al descuento del producto.
      */
     public void setDescuento(){
-	this.descuento = true;
+ this.descuento = true;
     }
 }
