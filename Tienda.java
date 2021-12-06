@@ -15,6 +15,8 @@ public class Tienda{
     protected Cliente clienteActivo;
     /*Carrito para las compras del cliente*/
     protected Carrito carrito;
+    /*Cuenta del cliente*/
+    protected CuentaProxy cuentaActiva;
 
     public Tienda(){
 	this.baseClientes = new Hashtable<String, Cliente>();
@@ -103,6 +105,13 @@ public class Tienda{
     }
 
     /**
+     * Metodo que envia un mensaje adecuado para cuando el usuario ingresa una opcion invalida
+     */
+    public String opcionInvalida(){
+	return this.version.opcionInvalida();
+    }
+
+    /**
      * Metodo para obtener un cliente de la tienda
      * @param String Usuario del cliente
      * @return Cliente Cliente correspondiente al usuario
@@ -120,8 +129,15 @@ public class Tienda{
     public void inicializarTienda(Cliente cliente){
 	this.version = this.elegirPais(cliente);
 	this.clienteActivo = cliente;
+	this.cuentaActiva = cliente.getCuenta();
 	this.carrito = new Carrito();	
     }
-    
-    
+
+    /**
+     * Metodo para reiniciar la tienda
+     */
+    public void reiniciarTienda(){
+	this.carrito = null;
+	this.clienteActivo = null;
+    }
 }

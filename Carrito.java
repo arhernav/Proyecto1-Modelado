@@ -25,6 +25,22 @@ public class Carrito{
     }
 
     /**
+     * Metodo toString del carrito
+     * @return String Representacion en String del carrito
+     */
+    @Override public String toString(){
+	String cadena = "";
+	cadena += "\n";
+	for(Producto p: this.carrito){
+	    cadena += p.toString();
+	    cadena += "\n";
+	}
+	cadena += "Total: $" + this.getTotal();
+	return cadena;
+    }
+    
+
+    /**
      * Metodo para obtener el total de la compra
      * @return int Suma de los precios de todos los objetos del carrito
      */

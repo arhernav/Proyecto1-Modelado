@@ -36,7 +36,8 @@ public class VersionUSA implements VersionTienda{
      */
     @Override public void generarFechaEntrega(){
       LocalDate fecha = LocalDate.now();
-      System.out.println(fecha.plusDays(15));
+      System.out.println("You can expect your purchase to arrive on: "
+			 + fecha.plusDays(15));
     }
 
 
@@ -57,7 +58,13 @@ public class VersionUSA implements VersionTienda{
     }
     
 
-
+    /**
+     * Devuelve un string con un mensaje adecuado para cuando el usuario ingresa una opcion invalida
+     * @return String String con el mensaje adecuado
+     */
+    @Override public String opcionInvalida(){
+	return "Invalid option. Please use one of the options from the menu above";
+    }
 
     
 }

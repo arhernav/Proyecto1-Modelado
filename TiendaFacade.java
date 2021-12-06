@@ -19,6 +19,8 @@ public class TiendaFacade{
 		opcionElegida = escaner.nextInt();
 		if(opcionElegida <= opciones && opcionElegida > 0){
 		    opcionValida = true;
+		}else{
+		    System.out.println(mensaje);
 		}
 	    }else{    
 		escaner.nextLine();
@@ -76,7 +78,7 @@ public class TiendaFacade{
 	    System.out.println("Lo sentimos, hubo un error con su sesion");
 	    return;
 	}
-	
+
 	boolean terminarEjecucion = false;
 	
 	this.tienda.saludar();
@@ -89,7 +91,7 @@ public class TiendaFacade{
 	while(!terminarEjecucion){
 	    System.out.println("");
 	    this.mostrarOpciones();	    
-	    switch(this.entradaOpciones(4, "Implementar")){
+	    switch(this.entradaOpciones(7, this.tienda.opcionInvalida())){
 	    case 1:
 		this.tienda.mostrarInventario();
 		break;
@@ -97,13 +99,22 @@ public class TiendaFacade{
 		this.tienda.enviarOferta();
 		break;
 	    case 3:
-		System.out.println("Falta implementar");
+	        this.recibirOrden();
 		break;
 	    case 4:
+		System.out.println(this.tienda.carrito);
+	    case 5:
+		break;
+	    case 6:
+		this.tienda.reiniciarTienda();
+		this.iniciarSesion();
+		this.comenzarCompras();
+		break;
+	    case 7:
 		terminarEjecucion = true;
 		break;
 	    default:
-		System.out.println("Implementar");
+		System.out.println(this.tienda.opcionInvalida());
 	    }
 	}
     }
@@ -113,7 +124,10 @@ public class TiendaFacade{
 	System.out.println("1.- Volver a mostrar el catalogo");
 	System.out.println("2.- Volver a mostrar las ofertas seleccionadas");
 	System.out.println("3.- Agregar producto al carrito");
-	System.out.println("4.- Salir ");
+	System.out.println("4.- Revisar el carrito");
+	System.out.println("5.- Pagar");
+	System.out.println("6.- Cerrar Sesion");
+	System.out.println("7.- Salir de CheemsMart");
     }
 
     public void recibirOrden(){

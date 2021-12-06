@@ -23,6 +23,11 @@ public interface VersionTienda{
      */
     public void enviarOferta();
 
+    /**
+     * Mensaje para cuando el usuario ingresa una opcion invalida
+     */
+    public String opcionInvalida();
+
 
     
 }
