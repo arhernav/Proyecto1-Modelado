@@ -10,14 +10,14 @@ public class Cliente{
   String nombre;
   long telefono;
   String direccion;
-  CuentaBanco cuenta;
+  Cuenta cuenta;
   Pais pais;
   int id;
   
   /**
    * Método que crea un cliente.
    */
-  public Cliente(String u, String co, String n, long t, String d, CuentaBanco cu, Pais p, int id){
+  public Cliente(String u, String co, String n, long t, String d, Cuenta cu, Pais p, int id){
     this.usuario = u;
     this.contraseña = co;
     this.nombre = n;
@@ -52,6 +52,13 @@ public class Cliente{
     protected boolean compararContraseña(String contra){
 	if(contra.equals(this.contraseña)) return true;
 	return false;
+    }
+
+    /**
+     * Metodo para obtener el proxy del cliente
+     */
+    protected CuentaProxy getCuenta(){
+	return this.cuenta.getProxy();
     }
   
   

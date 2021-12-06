@@ -38,7 +38,7 @@ public class VersionMexico implements VersionTienda{
   @Override
   public void generarFechaEntrega(){
     LocalDate fecha = LocalDate.now();
-    return fecha.plusDays(15).toString();
+    System.out.println("Tus productos llegaran el dia: " + fecha.plusDays(15));
   }
 
     /**
@@ -52,6 +52,14 @@ public class VersionMexico implements VersionTienda{
      Producto producto = it.next();
      if(producto.getDescuento() == true)System.out.println(producto);
  }
+    }
+
+    /**
+     * Devuelve un string con un mensaje adecuado para cuando el usuario ingresa una opcion invalida
+     * @return String String con el mensaje adecuado
+     */
+    @Override public String opcionInvalida(){
+	return "Opcion invalida. Por favor ingrese un numero que aparezca en el menu";
     }
     
   
