@@ -43,6 +43,16 @@ public class Cliente{
     public String getUsuario(){
 	return this.usuario;
     }
+
+    /**
+     * Metodo que compara el string dado con la contraseña del cliente
+     * @param String String que sera comparado con la contraseña del cliente
+     * @return Boolean True si la contraseña es igual, false en otro caso
+     */
+    protected boolean compararContraseña(String contra){
+	if(contra.equals(this.contraseña)) return true;
+	return false;
+    }
   
   
 }
