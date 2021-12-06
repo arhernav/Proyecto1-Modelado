@@ -13,7 +13,7 @@ public class VersionMexico implements VersionTienda{
      * Constructor de la clase
      */
     public VersionMexico(IteratorFactory fabrica){
-	this.fabrica = fabrica;
+ this.fabrica = fabrica;
     }
   
   /**
@@ -33,33 +33,25 @@ public class VersionMexico implements VersionTienda{
   }
   
   /**
-   *Método que genera la fecha estimada de entrega.
+   * Método que genera la fecha aproximada de entrega de lo que el cliente compró.
    */
   @Override
   public void generarFechaEntrega(){
-    System.out.println("La fecha de entrega es el día: " + this.fechaDeEntrega());
+    LocalDate fecha = LocalDate.now();
+    return fecha.plusDays(15).toString();
   }
-  
-  /**
-   * Método que muestra la fecha aproximada de entrega de lo que el cliente compró.
-   */
-  public String fechaDeEntrega(){
-      LocalDate fecha = LocalDate.now();
-      return fecha.plusDays(15).toString();
-  }
-
 
     /**
    * Método que envía la oferta al cliente.
    */ 
     @Override
     public void enviarOferta(){
-	Iterator<Producto> it = fabrica.elegirIterador("alimentos");
-	System.out.println("De todas las ofertas de hoy, estas fueron seleccionadas especialmente para ti: ");
-	while(it.hasNext()){
-	    Producto producto = it.next();
-	    if(producto.getDescuento() == true)System.out.println(producto);
-	}
+ Iterator<Producto> it = fabrica.elegirIterador("alimentos");
+ System.out.println("De todas las ofertas de hoy, estas fueron seleccionadas especialmente para ti: ");
+ while(it.hasNext()){
+     Producto producto = it.next();
+     if(producto.getDescuento() == true)System.out.println(producto);
+ }
     }
     
   
