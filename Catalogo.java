@@ -53,5 +53,18 @@ public abstract class Catalogo implements Iterable{
       this.productos.get(oferta2).setDescuento();
       
     }
+
+    /**
+     * Devuleve un producto en base al nombre
+     */
+    public Producto getProducto(String nombre){
+	Producto producto = null;
+	for(Producto p : this.productos){
+	    if(p.nombre.toLowerCase().equals(nombre.toLowerCase())){
+		return p;
+	    }	    
+	}
+	return producto;
+    }
     
 }

@@ -32,6 +32,21 @@ public class IteratorFactory{
 	}
     }
 
+    /**
+     * Metodo para obtener un objeto del catalogo
+     */
+    public Producto getProducto(String nombre){
+	Producto supp = null;
+	supp = this.catalogoElectronica.getProducto(nombre);
+	if(supp != null) return supp;
+	
+	supp = this.catalogoElectrodomesticos.getProducto(nombre);
+	if(supp != null) return supp;
+	
+	supp = this.catalogoAlimentos.getProducto(nombre);
+	if(supp != null) return supp;
+	return supp;
+    }
     
     
     

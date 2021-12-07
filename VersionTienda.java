@@ -28,6 +28,11 @@ public interface VersionTienda{
      */
     public String opcionInvalida();
 
+    /**
+     * Mensaje para generar el ticket de compra
+     */
+    public String generarTicket();
+
 
     
 }

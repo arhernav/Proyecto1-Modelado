@@ -66,5 +66,13 @@ public class VersionUSA implements VersionTienda{
 	return "Invalid option. Please use one of the options from the menu above";
     }
 
+    /**
+     * Devuelve un string que precedera al ticket de compra
+     * @return String Mensaje precedente al ticket
+     */
+    @Override public String generarTicket(){
+	return "These are all the things that you bought and the total price";
+    }
+
     
 }
