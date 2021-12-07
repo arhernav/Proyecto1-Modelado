@@ -1,3 +1,6 @@
+/**
+ *Clase Facade que maneja metodos para la ejecucion de la tienda
+ */ 
 import java.util.Scanner;
 public class TiendaFacade{
 
@@ -32,6 +35,7 @@ public class TiendaFacade{
 
     /**
      * Metodo para recibir entrada de la terminal
+     * @return String Cadena ingresada por el usuario a travez de la terminal
      */
     public String entrada(){
 	Scanner escaner = new Scanner(System.in);
@@ -150,6 +154,7 @@ public class TiendaFacade{
 	tienda.carrito.agregarCarrito(producto);
 	System.out.println("Producto agregado con exito");
     }
+    
     /**
      * Pagar el total del carrito y mostrar el ticket de compra
      */
