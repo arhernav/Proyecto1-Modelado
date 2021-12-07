@@ -167,6 +167,7 @@ public class TiendaFacade{
 	}
 	System.out.println(this.tienda.generarTicket());
 	System.out.println(this.tienda.carrito);
+	this.tienda.generarFechaEntrega();
 	cuenta.retiro(total);
 	cuenta.actualizarOriginal();
 	this.tienda.carrito.vaciarCarrito();
