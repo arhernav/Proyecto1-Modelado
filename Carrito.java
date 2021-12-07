@@ -51,5 +51,12 @@ public class Carrito{
 	}
 	return total;
     }
+
+    /**
+     * Vacia la lista del carrito
+     */
+    public void vaciarCarrito(){
+	this.carrito.clear();
+    }
     
 }

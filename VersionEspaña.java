@@ -62,5 +62,13 @@ public class VersionEspaña implements VersionTienda{
     @Override public String opcionInvalida(){
 	return "Opcion invalida. Por favor ingrese un numero que aparezca en el menu";
     }
+
+    /**
+     * Devuelve un string que precedera al ticket de compra
+     * @return String Mensaje precedente al ticket
+     */
+    @Override public String generarTicket(){
+	return "A continuacion te mostramos todas las cosas que compraste y el precio total";
+    }
 }
 

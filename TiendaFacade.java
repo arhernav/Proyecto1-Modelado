@@ -102,8 +102,11 @@ public class TiendaFacade{
 	        this.recibirOrden();
 		break;
 	    case 4:
+		System.out.println("\tCarrito");
 		System.out.println(this.tienda.carrito);
+		break;
 	    case 5:
+		this.pagar();
 		break;
 	    case 6:
 		this.tienda.reiniciarTienda();
@@ -119,6 +122,9 @@ public class TiendaFacade{
 	}
     }
 
+    /**
+     * Metodo para mostrar las opciones del menu
+     */
     public void mostrarOpciones(){
 	System.out.println();
 	System.out.println("1.- Volver a mostrar el catalogo");
@@ -130,8 +136,37 @@ public class TiendaFacade{
 	System.out.println("7.- Salir de CheemsMart");
     }
 
+    /**
+     * Compila el recibir la orden de compra y agregar al carrito
+     */
     public void recibirOrden(){
-	System.out.println("implementar");
+	System.out.println("Ingrese el nombre del producto que desea");
+	String nombre = this.entrada();
+	Producto producto = this.tienda.getProducto(nombre);
+	if(producto == null){
+	    System.out.println("Producto invalida / Invalid product");
+	    return;
+	}
+	tienda.carrito.agregarCarrito(producto);
+	System.out.println("Producto agregado con exito");
+    }
+    /**
+     * Pagar el total del carrito y mostrar el ticket de compra
+     */
+    public void pagar(){
+	CuentaProxy cuenta = this.tienda.getCuentaActiva();
+	int total = this.tienda.carrito.getTotal();
+	if(cuenta.revisarDinero() - total < 0){
+	    System.out.println("Lo siento, no tienes dinero suficiente para pagar");
+	    return;
+	}
+	System.out.println(this.tienda.generarTicket());
+	System.out.println(this.tienda.carrito);
+	cuenta.retiro(total);
+	cuenta.actualizarOriginal();
+	this.tienda.carrito.vaciarCarrito();
+	
+	
     }
 
     

@@ -140,4 +140,27 @@ public class Tienda{
 	this.carrito = null;
 	this.clienteActivo = null;
     }
+
+    /**
+     * Devuelve la cuenta del cliente activo
+     */
+    public CuentaProxy getCuentaActiva(){
+	return this.cuentaActiva;
+    }
+
+    /**
+     * Genera el ticket de compra
+     */
+    public String generarTicket(){
+	return this.version.generarTicket();
+    }
+
+    /**
+     * Devuelve el producto solicitado
+     * @para String Nombre del producto solicitado
+     * @return Producto Producto solicitado si es que esta en alguno de los catalogos, null en otro caso
+     */
+    public Producto getProducto(String nombre){
+	return this.fabrica.getProducto(nombre);
+    }
 }
