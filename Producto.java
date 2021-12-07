@@ -34,44 +34,45 @@ public class Producto{
    * Si el producto tiene descuento, se le descuente el 30% al precio original
    * @return int Precio del produco
    */
-    public double getPrecio(){
- double precioSupp = this.precio;
- double rebaja = 0;
- rebaja = (this.precio/100) * 30;
+  public double getPrecio(){
+    double precioSupp = this.precio;
+    double rebaja = 0;
+    rebaja = (this.precio/100) * 30;
     if(this.descuento){
- precioSupp = precioSupp - rebaja;
+      precioSupp = precioSupp - rebaja;
     }
     return precioSupp;
     
   }
-
-
-    /**
-     * Metodo toString
-     * Devuelve una representacion en cadena del objeto
-     * @return String Representacion en cadena del objeto
-     */
-    @Override public String toString(){
- String descuento;
- if(this.descuento == true){
-     return "Justo ahora, este producto tiene descuento del 30%. Precio usual: " + this.precio + " Precico con descuento: " + this.getPrecio() + "\n" + this.nombre + ": [ Departamento: " + this.departamento + ", Precio: " + this.getPrecio() + " ]\n\t CODIGO " + this.codigoDeBarras + "\n";
- }else{
-     return this.nombre + ": [ Departamento: " + this.departamento + ", Precio: " + this.getPrecio() + " ]\n\t CODIGO " + this.codigoDeBarras + "\n";
- }
+  
+  
+  /**
+   * Metodo toString
+   * Devuelve una representacion en cadena del objeto
+   * @return String Representacion en cadena del objeto
+   */
+  @Override public String toString(){
+    String descuento;
+    if(this.descuento == true){
+      return "Justo ahora, este producto tiene descuento del 30%. Precio usual: " + this.precio + " Precico con descuento: " + this.getPrecio() + "\n" + this.nombre + ": [ Departamento: " + this.departamento + ", Precio: " + this.getPrecio() + " ]\n\t CODIGO " + this.codigoDeBarras + "\n";
+    }else{
+      return this.nombre + ": [ Departamento: " + this.departamento + ", Precio: " + this.getPrecio() + " ]\n\t CODIGO " + this.codigoDeBarras + "\n";
     }
-
-    /**
-     * Getter para el descuento del producto
-     * @return boolean Booleano que indica si el producto esta en oferta
-     */
-    public boolean getDescuento(){
- return this.descuento;
-    }
-    
-    /**
-     * Método que asigna un valor booleano al descuento del producto.
-     */
-    public void setDescuento(){
- this.descuento = true;
-    }
+  }
+  
+  /**
+   * Getter para el descuento del producto
+   * @return boolean Booleano que indica si el producto esta en oferta
+   */
+  public boolean getDescuento(){
+    return this.descuento;
+  }
+  
+  /**
+   * Método que asigna un valor booleano al descuento del producto.
+   */
+  public void setDescuento(){
+    this.descuento = true;
+  }
+  
 }
