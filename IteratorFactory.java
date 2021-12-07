@@ -34,6 +34,7 @@ public class IteratorFactory{
 
     /**
      * Metodo para obtener un objeto del catalogo
+     * @return Producto Producto solicitado si es que se encuentra en alguno de los catalogos. Null si el producto no se encuentra
      */
     public Producto getProducto(String nombre){
 	Producto supp = null;
