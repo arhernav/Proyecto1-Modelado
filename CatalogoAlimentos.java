@@ -26,5 +26,5 @@ public class CatalogoAlimentos extends Catalogo{
   @Override public Iterator<Producto> iterator(){
     return this.productos.iterator();
   }
-    
+  
 }

@@ -5,16 +5,16 @@ import java.util.Iterator;
  * Clase que modela la versión mexicana de la tienda CheemsMart.
  */
 public class VersionMexico implements VersionTienda{
-
-    //Fabrica de iteradores para los catalogos
-    IteratorFactory fabrica;
-
-    /**
-     * Constructor de la clase
-     */
-    public VersionMexico(IteratorFactory fabrica){
- this.fabrica = fabrica;
-    }
+  
+  //Fabrica de iteradores para los catalogos
+  IteratorFactory fabrica;
+  
+  /**
+   * Constructor de la clase
+   */
+  public VersionMexico(IteratorFactory fabrica){
+    this.fabrica = fabrica;
+  }
   
   /**
    * Método que le da la bienvenida al cliente mexicano al ingresar a la tienda.
@@ -40,34 +40,34 @@ public class VersionMexico implements VersionTienda{
     LocalDate fecha = LocalDate.now();
     System.out.println("Tus productos llegaran el dia: " + fecha.plusDays(15));
   }
-
-    /**
+  
+  /**
    * Método que envía la oferta al cliente.
    */ 
-    @Override
-    public void enviarOferta(){
- Iterator<Producto> it = fabrica.elegirIterador("alimentos");
- System.out.println("De todas las ofertas de hoy, estas fueron seleccionadas especialmente para ti: ");
- while(it.hasNext()){
-     Producto producto = it.next();
-     if(producto.getDescuento() == true)System.out.println(producto);
- }
+  @Override
+  public void enviarOferta(){
+    Iterator<Producto> it = fabrica.elegirIterador("alimentos");
+    System.out.println("De todas las ofertas de hoy, estas fueron seleccionadas especialmente para ti: ");
+    while(it.hasNext()){
+      Producto producto = it.next();
+      if(producto.getDescuento() == true)System.out.println(producto);
     }
-
-    /**
-     * Devuelve un string con un mensaje adecuado para cuando el usuario ingresa una opcion invalida
-     * @return String String con el mensaje adecuado
-     */
-    @Override public String opcionInvalida(){
-	return "Opcion invalida. Por favor ingrese un numero que aparezca en el menu";
-    }
-
-    /**
-     * Devuelve un string que precedera al ticket de compra
-     * @return String Mensaje precedente al ticket
-     */
-    @Override public String generarTicket(){
-	return "A continuacion te mostramos todas las cosas que compraste y el precio total";
-    }
+  }
+  
+  /**
+   * Devuelve un string con un mensaje adecuado para cuando el usuario ingresa una opcion invalida
+   * @return String String con el mensaje adecuado
+   */
+  @Override public String opcionInvalida(){
+    return "Opcion invalida. Por favor ingrese un numero que aparezca en el menu";
+  }
+  
+  /**
+   * Devuelve un string que precedera al ticket de compra
+   * @return String Mensaje precedente al ticket
+   */
+  @Override public String generarTicket(){
+    return "A continuacion te mostramos todas las cosas que compraste y el precio total";
+  }
   
 }
